@@ -1,0 +1,62 @@
+---
+import Base from "../../layouts/Base.astro";
+import ThinnerContent from "../../components/ThinnerContent.astro";
+import { Image } from "astro:assets";
+import Back from "../../components/Back.astro";
+import khakis1 from "../../assets/khakis1.png";
+import khakis2 from "../../assets/khakis2.png";
+import khakis3 from "../../assets/khakis3.png";
+import khakis4 from "../../assets/khakis4.png";
+import khakis5 from "../../assets/khakis5.png";
+import khakis6 from "../../assets/khakis6.png";
+import khakis7 from "../../assets/khakis7.png";
+import khakis8 from "../../assets/khakis8.png";
+import khakis9 from "../../assets/khakis9.png";
+
+const title = "Khakis Direct";
+---
+
+<Base title={title}>
+  <ThinnerContent>
+    <Back next="/work/linguid" />
+    <section class="mb-8">
+      <h1 class="font-sans font-bold text-5xl my-8">{title}</h1>
+      <p class="mb-6">
+        While working with the team at Khakis of Carmel I was able to craft
+        improved advertising and in-store event signage. I conducted several
+        fashion photo shoots featuring newly arrived clothing and also updated
+        the eCommerce (Shopify) website.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+          <Image src={khakis1} alt="khakis1" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis2} alt="khakis2" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis3} alt="khakis3" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis4} alt="khakis4" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis5} alt="khakis5" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis6} alt="khakis6" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis7} alt="khakis7" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis8} alt="khakis8" class="w-full" />
+        </div>
+        <div>
+          <Image src={khakis9} alt="khakis9" class="w-full" />
+        </div>
+      </div>
+    </section>
+    <Back next="/work/linguid" />
+  </ThinnerContent>
+</Base>

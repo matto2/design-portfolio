@@ -1,0 +1,91 @@
+---
+import Logo from "./Logo.astro";
+import NavSocials from "./NavSocials.astro";
+---
+
+<nav
+  class="mt-4 lg:flex lg:justify-between lg:items-center mx-4 2xl:mx-0 relative z-50"
+>
+  <div class="text-center lg:flex lg:items-center">
+    <Logo />
+  </div>
+  <div class="flex justify-center items-center lg:ml-auto">
+    <div class="flex items-center space-x-4 text-slate-700 text-lg font-sans">
+      <a
+        href="/"
+        data-link="work"
+        class="hover:text-black cursor-pointer font-medium">Work</a
+      >
+      <a
+        href="/about"
+        data-link="about"
+        class="hover:text-black cursor-pointer font-medium">About</a
+      >
+      <a
+        href="/services"
+        data-link="services"
+        class="hover:text-black cursor-pointer font-medium">Services</a
+      >
+      <a
+        href="/contact"
+        data-link="contact"
+        class="hover:text-black cursor-pointer font-medium">Contact</a
+      >
+      <!-- NavSocials visible only on medium and larger screens -->
+      <div class="hidden lg:flex lg:ml-4">
+        <NavSocials />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const setActiveNavLink = () => {
+      const navLinks = document.querySelectorAll("nav a");
+      const currentPath = window.location.pathname;
+
+      navLinks.forEach((link) => {
+        const linkPath = new URL(link.href).pathname;
+        const dataLink = link.getAttribute("data-link");
+
+        link.classList.remove("active");
+
+        if (currentPath.startsWith(`/${dataLink}`)) {
+          link.classList.add("active");
+        } else if (linkPath === currentPath) {
+          link.classList.add("active");
+        }
+      });
+    };
+
+    setActiveNavLink();
+
+    document.addEventListener("astro:after-swap", setActiveNavLink);
+    window.addEventListener("popstate", setActiveNavLink);
+
+    const originalPushState = history.pushState;
+    history.pushState = function (...args) {
+      originalPushState.apply(this, args);
+      window.dispatchEvent(new Event("pushstate"));
+      window.dispatchEvent(new Event("locationchange"));
+    };
+
+    const originalReplaceState = history.replaceState;
+    history.replaceState = function (...args) {
+      originalReplaceState.apply(this, args);
+      window.dispatchEvent(new Event("replacestate"));
+      window.dispatchEvent(new Event("locationchange"));
+    };
+
+    window.addEventListener("locationchange", setActiveNavLink);
+  });
+</script>
+
+<style>
+  .active {
+    font-weight: bold;
+    color: #4f46e5;
+    text-decoration-line: none;
+  }
+</style>

@@ -1,0 +1,130 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import sunset from "../assets/sunset.webp";
+import coastal2 from "../assets/coastal2.png";
+import books from "../assets/books.png";
+import kiteworkscard from "../assets/kiteworkscard.png";
+import openbankingcard from "../assets/openbankingcard.png";
+import lpc from "../assets/lpc.png";
+import fastpencilcard from "../assets/fastpencilcard.png";
+import FooterContact from "../components/FooterContact.astro";
+import juice from "../assets/juice.png";
+import whale_shirts from "../assets/whale_shirts.png";
+import jack from "../assets/jack.png";
+import kamari from "../assets/kamari.jpg";
+import coastalcard from "../assets/coastalcard.png";
+import linguidcard from "../assets/linguidcard.png";
+---
+
+<Base title="Matt O'Leary Design - Home">
+  <section class="px-4 2xl:px-0">
+    <h1
+      class="text-4xl mx-auto text-center text-indigo-700 md:text-5xl font-bold py-8 animate-raise"
+    >
+      Design & Marketing Services for Your Business
+    </h1>
+    <p
+      class="text-xl px-12 md:text-3xl mb-8 md:px-3 mx-auto text-center max-w-3xl text-stone-500 font-['Onest_Variable']"
+    >
+      Web design, development, and digital marketing to support your business
+      and engage your customers.
+    </p>
+    <a href="https://cal.com/mattosurf/30min">
+      <div class="mb-2 mx-auto text-center">
+        <Button text="Book a Free Consultation" />
+      </div>
+    </a>
+
+    <div
+      class="photo-gallery grid items-center w-full mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-2 mb-2"
+    >
+      <Card
+        img={linguidcard}
+        alt="linguid Image"
+        title="Linguid"
+        link="/work/linguid"
+      />
+
+      <Card
+        img={kamari}
+        alt="jack pitts photography"
+        title="Jack Pitts Photography"
+        link="/work/jack"
+      />
+      <Card
+        img={coastalcard}
+        alt="coastal nature guides"
+        title="Coastal Nature Guides"
+        link="/work/coastal"
+      />
+
+      <Card
+        img={books}
+        alt="Books Image"
+        title="Book Covers"
+        link="/work/books"
+      />
+      <Card
+        img={kiteworkscard}
+        alt="kiteworks Image"
+        title="Kiteworks Web App"
+        link="/work/kiteworks"
+      />
+      <Card
+        img={openbankingcard}
+        alt="open banking Image"
+        title="Open Banking"
+        link="/work/openbanking"
+      />
+      <Card
+        img={lpc}
+        alt="live price check Image"
+        title="Live Price Check"
+        link="/work/livepricecheck"
+      />
+      <Card
+        img={fastpencilcard}
+        alt="FastPencil Image"
+        title="FastPencil"
+        link="/work/fastpencil"
+      />
+      <Card
+        img={juice}
+        alt="Juice Image"
+        title="The Juice Magazine"
+        link="/work/juice"
+      />
+      <Card
+        img={whale_shirts}
+        alt="Whale Watching Shirts"
+        title="Santa Cruz Whale Watching"
+        link="/work/whalewatching"
+      />
+    </div>
+    <p class="mb-8 text-xl max-w-7xl mx-auto">
+      <strong>Matt O'Leary Design</strong>
+      specializes in design, web development, and digital marketing services for
+      startups, small businesses, and organizations. Whether you need a brand identity,
+      new website, enhanced visual communications, or effective digital marketing
+      strategies, I blend creativity with technical expertise to bring your vision
+      to life. From social media management and SEO optimization to email marketing
+      and PPC advertising, I offer a comprehensive range of services to help your
+      business grow online. <a
+        href="/about"
+        class="text-indigo-700 hover:underline hover:text-indigo-900"
+        >Learn more …</a
+      >
+    </p>
+    <p class="mb-8 text-xl max-w-7xl mx-auto">
+      <a
+        href="/contact"
+        class="text-indigo-700 hover:underline hover:text-indigo-900"
+        >Reach out</a
+      > to see how I can help you today!
+    </p>
+
+    <!-- <Contact /> -->
+  </section>
+</Base>
